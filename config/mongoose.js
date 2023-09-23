@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1/habit_tracker');
+mongoose.connect(process.env.MONGO_URL,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    dbName:"HabitTracker"
+})
 
 const db = mongoose.connection;
 

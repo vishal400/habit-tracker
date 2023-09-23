@@ -1,8 +1,9 @@
+require('dotenv').config();
 const express = require('express');
 const ejsLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 app.use(express.urlencoded());
 
